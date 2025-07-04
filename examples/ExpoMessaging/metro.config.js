@@ -9,6 +9,10 @@ const { exclusionList, resolveUniqueModule } = require('@rnx-kit/metro-config');
  */
 const config = getDefaultConfig(__dirname);
 
+config.resolver.sourceExts.push('cjs');
+config.resolver.unstable_enablePackageExports = false;
+
+
 const PATH = require('path');
 const packageDirPath = PATH.resolve(__dirname, '../../package');
 const expoPackageDirPath = PATH.resolve(__dirname, '../../package/expo-package');

@@ -7,8 +7,9 @@ import {
   useCreateChatClient,
 } from 'stream-chat-expo';
 import { AuthProgressLoader } from './AuthProgressLoader';
-import { STREAM_API_KEY, user, userToken } from '../constants';
+import { STREAM_API_KEY } from '../constants';
 import { useStreamChatTheme } from '../useStreamChatTheme';
+import { useAuth } from '../context/AuthContext';
 
 const streami18n = new Streami18n({
   language: 'en',
@@ -18,11 +19,14 @@ SqliteClient.logger = (level, message, extraData) => {
   // console.log(level, `SqliteClient: ${message}`, extraData);
 };
 
-export const ChatWrapper = ({ children }: PropsWithChildren<{}>) => {
+interface IProps {}
+
+export const ChatWrapper = ({ children }: PropsWithChildren<IProps>) => {
+  const { user } = useAuth();
   const chatClient = useCreateChatClient({
     apiKey: STREAM_API_KEY,
-    userData: user,
-    tokenOrProvider: userToken,
+    userData: { id: user.id, name: user.name },
+    tokenOrProvider: user.token,
   });
   const theme = useStreamChatTheme();
 

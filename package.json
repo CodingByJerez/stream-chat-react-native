@@ -39,5 +39,10 @@
     "test:unit": "yarn lerna-workspaces run test:unit",
     "minify-bundle": "uglifyjs package/lib/module/**/*.js -o package/lib/module/bundle.min.js -c -m"
   },
-  "packageManager": "yarn@1.22.22"
+  "packageManager": "yarn@1.22.22",
+  "dependencies": {
+    "deepl": "^1.0.13",
+    "deepl-node": "^1.19.0",
+    "node-fetch": "^3.3.2"
+  }
 }

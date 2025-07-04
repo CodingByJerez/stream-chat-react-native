@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ExpoMessaging",
-    "slug": "ExpoMessaging",
+    "name": "Rodolphe",
+    "slug": "rodolphe",
     "privacy": "public",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,12 +20,12 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "usesIcloudStorage": true,
-      "bundleIdentifier": "io.stream.expomessagingapp",
-      "appleTeamId": "EHV7XZLAHA"
+      "usesIcloudStorage": false,
+      "bundleIdentifier": "com.codingbyjerez.messaging",
+      "appleTeamId": "34697YW865"
     },
     "android": {
-      "package": "io.stream.expomessagingapp",
+      "package": "com.codingbyjerez.messaging",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -64,6 +64,12 @@
         }
       ],
       "./plugins/keyboardInsetMainActivityListener.js"
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "9f59d131-adf0-4e1f-99e7-209ae9a24cf8"
+      }
+    }
   }
 }
